@@ -1,12 +1,12 @@
-.footer_text{
+.layout_footer_text{
     color: white;
 }
 
-nav>div>a{
+.layout_nav_a{
     color: rgb(200, 200, 200);
     text-decoration: none;
 }
 
-nav>div>a:hover, div>a:active{
+.layout_nav_a:hover{
     color: white;
 }
