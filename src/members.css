@@ -1,14 +1,12 @@
-.card{
+.member_card{
     position: relative;
     display: flex;
     flex-direction: column;
     word-wrap: break-word;
-    background-color: rgb(255, 255, 255);
     background-clip: border-box;
     max-width: 600px;
 }
-
-.card-body {
+.member_card-body {
     flex: 1 1 auto;
     padding: 1.25rem;
 }
@@ -17,25 +15,25 @@
     font-style: oblique;
     text-underline-position: auto;
     background-color: rgb(53,53,53);
-    color: mintcream;
+    color: rgb(247, 239, 239);
     padding:0.5%;
 }
 
-.card-title {
+.member_card-title {
     margin-bottom: .75rem;
     font-size: x-large;
     font-family: Arial, Helvetica, sans-serif;
     font-style: oblique;
     font-weight: 100;
 }
-.card-text{
+.member_card-text{
     font-size: large;
     font-family: 'Times New Roman', Times, serif;
     font-style: oblique;
     font-weight: 200;
 }
 
-.card-img {
+.member_card-img {
     width: 100%;
     height: 100%;
 }
