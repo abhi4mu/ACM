@@ -10,13 +10,14 @@
     flex: 1 1 auto;
     padding: 1.25rem;
 }
-.body h1,h2,h3,h4{
+.member_h3{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: oblique;
     text-underline-position: auto;
-    background-color: rgb(53,53,53);
-    color: rgb(247, 239, 239);
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     padding:0.5%;
+    font-size:xx-large;
 }
 
 .member_card-title {
