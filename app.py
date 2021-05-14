@@ -12,11 +12,11 @@ app = Flask(__name__)
 # mysql = MySQL(app)
 
 @app.route('/event<id>')
-def event():
+def event(id):
     return render_template('event.html')
 
 
-@app.route('/')
+@app.route('/home')
 def home():
     
     
@@ -25,7 +25,7 @@ def home():
     # rows = cur.fetchall()
     # cur.close()
 
-    return render_template('home.html',id=1)#rows=rows
+    return render_template('home.html',id=str(1))#rows=rows
 
 @app.route('/members', methods=['GET','POST'])
 def members():
