@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block body %}
   <div class="member_card">
-  <img src="file:///home/ynvsb/Documents/GitHub/ACM/static/images/1.jpg" class="card-img-top" alt="...">
+  <img src="{{url_for('static', filename='images/1.jpg')}}"  class="member_card-img-top" alt="...">
   <div class="members_card-body">
     <h5 class="member_card-title">Card title</h5>
     <p class="member_card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
