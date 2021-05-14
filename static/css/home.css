@@ -84,12 +84,12 @@ button:hover
 }
 
 #layout_nav_a{
-    color: rgb(153, 153, 153);
+    color: white;
     text-decoration: none;
 }
 
 #layout_nav_a:hover{
-    color: white;
+    color: sandybrown;
 
 }
 
