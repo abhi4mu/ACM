@@ -131,3 +131,13 @@
 .pt-2, .py-2 {
     padding-top: .5rem!important;
 }
+
+
+
+
+.event_image
+{
+    position: absolute;
+    top: 80px;
+    right: 19px;
+}
