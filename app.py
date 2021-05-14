@@ -22,7 +22,7 @@ def home():
 
     return render_template('home.html',)#rows=rows
 
-@app.route('/members')
+@app.route('/members', methods=['GET','POST'])
 def members():
     return render_template('members.html')
 
