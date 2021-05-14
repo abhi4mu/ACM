@@ -11,6 +11,10 @@ app = Flask(__name__)
 # app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 # mysql = MySQL(app)
 
+@app.route('/careerNews')
+def careerNews():
+    return render_template('careerNews.html')
+
 @app.route('/event<id>')
 def event(id):
     return render_template('event.html')
@@ -30,6 +34,11 @@ def home():
 @app.route('/members', methods=['GET','POST'])
 def members():
     return render_template('members.html')
+
+
+@app.route('/techNews')
+def techNews():
+    return render_template('techNews.html')
 
 if __name__=='__main__':
     app.run(debug=True)
