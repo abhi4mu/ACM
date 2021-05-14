@@ -11,6 +11,11 @@ app = Flask(__name__)
 # app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 # mysql = MySQL(app)
 
+@app.route('/event<id>')
+def event():
+    return render_template('event.html')
+
+
 @app.route('/')
 def home():
     
@@ -20,7 +25,7 @@ def home():
     # rows = cur.fetchall()
     # cur.close()
 
-    return render_template('home.html',)#rows=rows
+    return render_template('home.html',id=1)#rows=rows
 
 @app.route('/members', methods=['GET','POST'])
 def members():
