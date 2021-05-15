@@ -174,10 +174,23 @@ border-top-right-radius: 6px;
 
 
 
-
-.event_image
+.event_card_text
+{
+    color: #000;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+    display: block;
+}
+.event_responsive {
+  width: 100px;
+  height: auto;
+}
+.event_card_image
 {
     position: absolute;
     top: 80px;
-    right: 19px;
+    right: 15px;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    display: grid;
 }
