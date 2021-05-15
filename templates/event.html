@@ -1,5 +1,6 @@
 {% extends 'layout.html' %}
 {% block body %}
+<div>
 <p>Organized by ACM student chapter</p> 
 <h4>Dept. of Computer Science and Engineering</h4>
 <h3> Prasad V. Potluri Siddhartha Institute of Technology (Autonomous)</h3>
@@ -8,7 +9,8 @@ NBA ,  NAAC) and
  (ISO 9001: 2008 Certified Institution)
 Kanuru, Vijayawada – 520007
 </p>
-<div class="event_image">
-    <img src="{{url_for('static', filename='images/1.jpg')}}"  alt="..." width="100px" height="100px">
+<div class="event_image"
+src="{{url_for('static', filename='Hermes.png')}}" 
+    style="background-image: url_for('static', filename='images/1.jpg');" width="100px" height="100px">
 </div>
 {% endblock %}
