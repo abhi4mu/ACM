@@ -31,6 +31,10 @@ def home():
 
     return render_template('home.html',id=str(1))#rows=rows
 
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
 @app.route('/members', methods=['GET','POST'])
 def members():
     return render_template('members.html')
