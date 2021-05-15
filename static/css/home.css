@@ -37,7 +37,7 @@ border-top-right-radius: 6px;
   border-top-left-radius: 6px;
     /*margin-top: ;*/
     /*margin-left: 5px;*/
-    align-content:;
+    align-content:center;
     text-align: left 5px;
 }/*career news styles end*/
 
@@ -151,12 +151,12 @@ border-top-right-radius: 6px;
 .member_card_text {
     text-align: center;
     font-size: 2vmin;
-    color: white;
+    color: black;
 }
 
 .member_head{
     text-align: center;
-    color: white;
+    color: black;
 }
 
 
