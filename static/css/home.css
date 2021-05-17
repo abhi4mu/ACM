@@ -176,21 +176,22 @@ border-top-right-radius: 6px;
 
 .event_card_text
 {
-    color: #000;
-    flex: 1 1 auto;
-    padding: 1.25rem;
-    display: block;
+    display: inline-block;
+	background: rgba(255,255,255,0);
+    cursor: pointer;
+    width: 60%;
+    margin-left: 5%;
+    margin-top:10px;
 }
-.event_responsive {
+/*.event_responsive {
   width: 100px;
   height: auto;
-}
+}*/
 .event_card_image
 {
-    position: absolute;
-    top: 80px;
-    right: 15px;
-    object-fit: cover;
-    background-repeat: no-repeat;
-    display: grid;
+    margin-left: 1%;
+    display:inline-block;
+    margin-top: 10px;
+    width: 30%;
+    min-width:100px;
 }
