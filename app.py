@@ -1,15 +1,15 @@
 from flask import Flask,render_template,url_for
-# from flask_mysqldb import MySQL
+from flask_mysqldb import MySQL
 
 app = Flask(__name__)
 
 #connecting to database
-# app.config['MYSQL_HOST'] = '127.0.0.1'
-# app.config['MYSQL_DB'] = 'pvpsiddh_test'
-# app.config['MYSQL_USER'] = 'root'
-# app.config['MYSQL_PASSWORD'] = 'root'
-# app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
-# mysql = MySQL(app)
+app.config['MYSQL_HOST'] = '127.0.0.1'
+app.config['MYSQL_DB'] = 'ACM'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = 'root'
+app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
+mysql = MySQL(app)
 
 @app.route('/careerNews')
 def careerNews():
