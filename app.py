@@ -15,7 +15,7 @@ mysql = MySQL(app)
 def careerNews():
     return render_template('careerNews.html')
 
-@app.route('/event<id>')
+@app.route('/event/<id>')
 def event(id):
     return render_template('event.html')
 
