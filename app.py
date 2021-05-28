@@ -45,4 +45,3 @@ def techNews():
     return render_template('techNews.html')
 
 if __name__=='__main__':
-    app.run(debug=True)
