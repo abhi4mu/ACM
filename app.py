@@ -21,7 +21,13 @@ def careerNews():
 
 @app.route('/event/<id>')
 def event(id):
-    return render_template('event.html')
+
+    cur = mysql.connection.cursor()
+    cur.execute('SELECT * FROM EVENT_NAMES')
+    row1 = cur.fetchall()
+    cur.execute('SELECT * FROM EVENT_DESC')
+    row2 = cur.fetchall()
+    return render_template('event.html',row1=row1,row2=row2)
 
 
 @app.route('/home')
