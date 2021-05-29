@@ -1,11 +1,6 @@
 {% extends 'layout.html'%}
 {% block body %}
 	
-<!-- {% for row in rows%}
-	<p>{{row['id']}}</p>
-	<p>{{row['name']}}</p>
-{% endfor %} -->
-
 <!-- news -->
 <div class="home_news_board">
 	<div style="margin-left: 1%;margin-top: 1em;margin-bottom: 1em; margin-right: 1%;color:white">
@@ -16,155 +11,19 @@
 <!-- events -->
 <h1 style="margin-left: 2%;">Events</h1>
 
-<a href={{url_for('event',id=id)}} style="text-decoration: none;">
-	<div class="home_cards" style="color:white;background-color: #abad59">
+{% for row in rows %}
+<a href={{url_for('event',id=row['EVENT_ID'])}} style="text-decoration: none;">
+	<div class="home_cards" style="color:white;background-color: {{row['color']}}">
 		<div class="title" >
-			<p class="home_h5">2-DAY STUDENT TRAINING PROGRAM ON MICROSOFT AZURE,ITS FEATURES AND APPLICATION DEVELOPMENT</p>
+			<p class="home_h5">{{row['EVENT_NAME']}}</p>
 		</div>
-		   <div class="home_date">
-			 <p class='home_h5'>30-12-2020</p>
+		   <div class="home_date row">
+			 	<p class='home_h5 col-md-6 col-xs-12'>{{row['START_DATE']}}</p>
+				<p class="home_h5 col-md-6 col-xs-12">{{row['END_DATE']}}</p>
 		</div>
 	</div>
 </a>
-
-<a href={{url_for('event',id=id)}} style="text-decoration: none;">
-	<div class="home_cards" style="color:white;background-color: #6f8faf">
-		<div class="title" >
-			<p class="home_h5">2-DAY STUDENT TRAINING PROGRAM ON MICROSOFT AZURE,ITS FEATURES AND APPLICATION DEVELOPMENT</p>
-		</div>
-		   <div class="home_date">
-			 <p class='home_h5'>30-12-2020</p>
-		</div>
-	</div>
-</a>
-
-<div class="home_cards" style="color:white;background-color: #9693b2">
-	<div class="title" >
-		<p class="home_h5">2-DAY STUDENT TRAINING PROGRAM ON MICROSOFT AZURE,ITS FEATURES AND APPLICATION DEVELOPMENT</p>
-	</div>
-   	<div class="home_date">
-     	<h6 class="home:hover">30-12-2020</h6>
-	</div>
-</div>
-
-<div class="home_cards" style="color:white;background-color: #deb887">
-	<div class="title" >
-		<p class="home_h5">2-DAY STUDENT TRAINING PROGRAM ON MICROSOFT AZURE,ITS FEATURES AND APPLICATION DEVELOPMENT</p>
-	</div>
-   	<div class="home_date">
-     	<h6 class="home:hover">30-12-2020</h6>
-	</div>
-</div>
-
-
-
-<div class="home_cards" style="color:white;background-color: #a14633">
-	<div class="title" >
-		<p class="home_h5" style="color: #FFFFFF">2-DAY STUDENT TRAINING PROGRAM ON MICROSOFT AZURE,ITS FEATURES AND APPLICATION DEVELOPMENT</p>
-	</div>
-   	<div class="home_date">
-     	<h6 class="home:hover">30-12-2020</h6>
-	</div>
-</div>
-
-<div class="home_cards"style="color:white;background-color: #862657">
-	<div class="title" >
-		<p class="home_h5 h5" style="color: #FFFFFF">AI Past Present Future</p>
-	</div>
-   	<div class="home_date">
-     	<h6 class="home:hover">30-12-2020</h6>
-	</div>
-</div>
-
-<div class="home_cards" style="color:white;background-color: #5b6466">
-	<div class="title" >
-		<p class="home_h5 h5" style="color: #FFFFFF">AI Past Present Future</p>
-	</div>
-   	<div class="home_date">
-     	<h6 class="home:hover">30-12-2020</h6>
-	</div>
-</div>
-
-<div class="home_cards"  style="color:white;background-color: #685a4e">
-	<div class="title">
-		<p class="home_h5 h5" style="color: #FFFFFF">AI Past Present Future</p>
-	</div>
-   	<div class="home_date">
-     	<h6 class="home:hover">30-12-2020</h6>
-	</div>
-</div>
-
-<div class="home_cards" style="color:white;background-color: #009440;
-color: white"> <div
-class="title" > <p class="home_h5 h5" style="color: #FFFFFF">AI Past Present
-Future</p> </div> <div class="home_date"> <h6
-class="home:hover">30-12-2020</h6> </div> </div>
-
-<div class="home_cards" style="color:white;background-color: #fc8eac;
-color: white">
-	<div class="title" >
-		<p class="home_h5 h5" style="color: #FFFFFF">AI Past Present Future</p>
-	</div>
-   	<div class="home_date">
-     	<h6 class="home:hover">30-12-2020</h6>
-	</div>
-</div>
-
-<div class="home_cards"  style="color:white;background-color: #ffa500;
-color: white">
-	<div class="title" >
-		<p class="home_h5 h5" style="color: #FFFFFF">AI Past Present Future</p>
-	</div>
-   	<div class="home_date">
-     	<h6 class="home:hover">30-12-2020</h6>
-	</div>
-</div>
-
-<div class="home_cards" style="color:white;background-color: #c0c0c0">
-	<div class="title" >
-		<p class="home_h5 h5" style="color: #FFFFFF">AI Past Present Future</p>
-	</div>
-   	<div class="home_date">
-     	<h6 class="home:hover">30-12-2020</h6>
-	</div>
-</div>
-
-<div class="home_cards" style="color:white;background-color: #4b0082">
-	<div class="title" >
-		<p class="home_h5 h5" style="color: #FFFFFF">AI Past Present Future</p>
-	</div>
-   	<div class="home_date">
-     	<h6 class="home:hover">30-12-2020</h6>
-	</div>
-</div>
-
-<div class="home_cards" style="color:white;background-color: #ff033e">
-	<div class="title" >
-		<p class="home_h5 h5" style="color: #FFFFFF">AI Past Present Future</p>
-	</div>
-   	<div class="home_date">
-     	<h6 class="home:hover">30-12-2020</h6>
-	</div>
-</div>
-
-<div class="home_cards" style="color:white;background-color: #009691">
-	<div class="title" >
-		<p class="home_h5 h5" style="color: #FFFFFF">AI Past Present Future</p>
-	</div>
-   	<div class="home_date">
-     	<h6 class="home:hover">30-12-2020</h6>
-	</div>
-</div>
-
-<div class="home_cards" style="color:white;background-color: #febaad;
-color: white">
-	<div class="title" >
-		<p class="home_h5 h5" style="color: #FFFFFF">AI Past Present Future</p>
-	</div>
-   	<div class="home_date">
-     	<h6 class="home:hover">30-12-2020</h6>
-	</div>
-</div>
+{% endfor %}
 
 {% endblock %}
 
