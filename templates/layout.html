@@ -16,12 +16,12 @@
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" style="background-color: #537895;background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#" style="color:antiquewhite"><h5>PVPSIT ACM&ensp;&ensp;</h5></a>
+          <a class="navbar-brand" href={{url_for('home')}} style="color:antiquewhite"><h5>PVPSIT ACM&ensp;&ensp;</h5></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
+            <div class="navbar-nav ms-auto">
               <a class="nav-link" id="layout_nav_a" href={{url_for('home')}}>HOME</a>&ensp;
               <a class="nav-link" id="layout_nav_a" href={{url_for('techNews')}}>TECH_NEWS</a>&ensp;
               <a class="nav-link" id="layout_nav_a" href={{url_for('careerNews')}}>CAREER_NEWS</a>&ensp;
