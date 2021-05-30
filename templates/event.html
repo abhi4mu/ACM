@@ -1,10 +1,7 @@
 {% extends 'layout.html' %}
 {% block body %}
 
-{{row1}}
-<br>
-{{row2}}
-
+{{row2['ORGANIZED_BY'] | safe}}
 <div class="container-fluid">
         <div class="row">
                 <div class="col-lg-6 col-md-12">

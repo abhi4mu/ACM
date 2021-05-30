@@ -1,4 +1,5 @@
 from flask import Flask,render_template,url_for
+import flask
 from flask_mysqldb import MySQL
 import random
 
@@ -27,7 +28,8 @@ def event(id):
     row1 = cur.fetchall()
     cur.execute('SELECT * FROM EVENT_DESC')
     row2 = cur.fetchall()
-    return render_template('event.html',row1=row1,row2=row2)
+    cur.close()
+    return render_template('event.html',row1=row1[0],row2=row2[0])
 
 
 @app.route('/home')
