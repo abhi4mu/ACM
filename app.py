@@ -31,9 +31,8 @@ def event(id):
     cur.close()
     return render_template('event.html',row1=row1[0],row2=row2[0])
 
-
-@app.route('/home')
-def home():
+@app.route('/events')
+def events():
     global card_colors
     colors_len = len(card_colors)-1
 
@@ -53,7 +52,12 @@ def home():
         rows[i]['color'] = color[0]
     #adding colors finished
 
-    return render_template('home.html',rows=rows)
+    return render_template('events.html',rows=rows)
+
+
+@app.route('/home')
+def home():
+    return render_template('home.html')
 
 @app.route('/login')
 def login():

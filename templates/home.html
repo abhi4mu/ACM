@@ -2,28 +2,46 @@
 {% block body %}
 	
 <!-- news -->
-<div class="home_news_board">
+<div class="home_notice_board">
 	<div style="margin-left: 1%;margin-top: 1em;margin-bottom: 1em; margin-right: 1%;color:white">
 		<h4>Notice Board</h4>
 	</div>
 </div>
 
-<!-- events -->
-<h1 style="margin-left: 2%;">Events</h1>
+<!-- career and tech news -->
+<div class="container-fluid">
+<div class="row">
+	<div class="col-lg-6 col-md-12">
+		
+		<!-- career news -->
+		<!-- head -->
+		<h1 style="text-decoration: underline;margin-top: 1em;padding-bottom: 1em;padding-left: 2%;">CAREER NEWS</h1>
 
-{% for row in rows %}
-<a href={{url_for('event',id=row['EVENT_ID'])}} style="text-decoration: none;">
-	<div class="home_cards" style="color:white;background-color: {{row['color']}}">
-		<div class="title" >
-			<p class="home_h5">{{row['EVENT_NAME']}}</p>
-		</div>
-		   <div class="home_date row">
-			 	<p class='home_h5 col-md-6 col-xs-12'>{{row['START_DATE']}}</p>
-				<p class="home_h5 col-md-6 col-xs-12">{{row['END_DATE']}}</p>
-		</div>
+		<!-- news	 -->
+		<a href="#" style="color: black;text-decoration: none;">
+			<h4 class="home_news_h4" style="padding-left: 2%; padding-bottom: 1%; border-bottom: 1px dashed;">Being a Data Scientist Could Be Rewarding in 2021 <br> Dice Insights, December 23 
+			</h4>
+		</a>
 	</div>
-</a>
-{% endfor %}
+
+	<div class="col-lg-6 col-md-12">
+		
+		<!-- tech news -->
+		<!-- head -->
+		<h1 style="text-decoration: underline;margin-top: 1em;padding-bottom: 1em;padding-left: 2%;">TECH NEWS</h1>
+
+		<!-- news	 -->
+		<a href="#" style="color: black;text-decoration: none;">
+			<h4 class="home_news_h4" style="padding-left: 2%; padding-bottom: 1%; border-bottom: 1px dashed;">Being a Data Scientist Could Be Rewarding in 2021 <br> Dice Insights, December 23 
+			</h4>
+		</a>
+
+	</div>
+
+</div>
+</div>
+
+
 
 {% endblock %}
 
