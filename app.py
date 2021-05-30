@@ -41,8 +41,17 @@ def home():
     cur.execute('SELECT * FROM EVENT_NAMES ORDER BY START_DATE DESC')
     rows = cur.fetchall()
     cur.close()
+
+    # from now the code is adding randomly generated colors to cards in rows dictionary
+    availableColors = set() #with this set we make sure no color is repeated until all colors are selected
+
     for i in range(len(rows)):
-        rows[i]['color'] = card_colors[random.randint(1,colors_len)]
+        if not availableColors:#if set is empty i.e; no colors available
+            availableColors = set(card_colors) #filling set with colors
+        color = random.sample(availableColors,1)#getting 1 color from set as list
+        availableColors.remove(color[0])#removing obtained color from set
+        rows[i]['color'] = color[0]
+    #adding colors finished
 
     return render_template('home.html',rows=rows)
 
