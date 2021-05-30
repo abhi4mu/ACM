@@ -14,7 +14,7 @@ app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 mysql = MySQL(app)
 
 
-card_colors = ['#abad59','#6f8faf','#9693b2','#deb887','#a14633','#862657','#5b6466','#685a4e','#009440','#fc8eac','#ffa500','#c0c0c0','#4b0082','#ff033e','#009691','#febaad']
+card_colors = ['#abad59','#6f8faf','#9693b2','#deb887','#a14633','#862657','#5b6466','#685a4e','#009440','#fc8eac','#ffa500','#c0c0c0','#4b0082','#ff033e','#009691']
 
 @app.route('/careerNews')
 def careerNews():

@@ -35,6 +35,8 @@
 {
 	border-radius: 6px;
 	width: 22%;
+  /* padding-top: 1%;
+  padding-bottom: 1%; */
     /* min-width: 400px; */
 	display: inline-block;
 	background-color: white;
@@ -45,7 +47,7 @@
 }
 .home_cards:hover
 {
-	box-shadow: 5px 5px 10px orange;
+	box-shadow: 10px 10px 15px orange;
 }
 .home_date
 {
