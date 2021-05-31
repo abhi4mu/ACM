@@ -1,4 +1,6 @@
-insert into CAEEER_NEWS values
+USE ACM;
+
+insert into CAREER_NEWS values
 ("US IT Jobs Growth Continues With Pandemic in the Rearview Mirror<br>Computerworld,May 12","https://www.computerworld.com/article/3542681/us-it-jobs-growth-continues-with-pandemic-in-the-rearview-mirror.html"),
 ("The Battle For Tech Talent Is Heating Up<br>The Business Journals,April 21","https://www.bizjournals.com/bizjournals/news/2021/04/21/tech-talent-top-markets.html"),
 ("Everything You Need to Know to Land a Job in Data Science<br>ZDNet,May 4","https://www.zdnet.com/article/everything-you-need-to-know-to-land-a-job-in-data-science/"),
