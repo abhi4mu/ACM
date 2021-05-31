@@ -24,9 +24,9 @@ def careerNews():
 def event(id):
 
     cur = mysql.connection.cursor()
-    cur.execute('SELECT * FROM EVENT_NAMES')
+    cur.execute("SELECT * FROM EVENT_NAMES EVENT_ID={}".format(id))
     row1 = cur.fetchall()
-    cur.execute('SELECT * FROM EVENT_DESC')
+    cur.execute("SELECT * FROM EVENT_DESC EVENT_ID={}".format(id))
     row2 = cur.fetchall()
     cur.close()
     return render_template('event.html',row1=row1[0],row2=row2[0])
@@ -34,7 +34,6 @@ def event(id):
 @app.route('/events')
 def events():
     global card_colors
-    colors_len = len(card_colors)-1
 
     cur = mysql.connection.cursor()
     cur.execute('SELECT * FROM EVENT_NAMES ORDER BY START_DATE DESC')
