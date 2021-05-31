@@ -1,28 +1,24 @@
 {% extends 'layout.html' %}
 {% block body %}
 
-{{row2['ORGANIZED_BY'] | safe}}
-<div class="container-fluid">
-        <div class="row">
-                <div class="col-lg-6 col-md-12">
-                        <h4 style="font-size: 2vw;text-align: center;">AI PAST PRESENT FUTURE
-                        <p style="font-size: 1vw;text-align: center;">Date:17-05-2021</p></h4>
-                        <h4 style="font-size: 2vw;">P.Radha Krishna</h4>
-                        <p>PROF and HOD At DEPT Of Computer Science And Engineering , Nation Institute Of Technology, Warangal</p>
-                        <p> Organized by ACM student chapter</p> 
-                        <h5 style="font-size: 2vw;">Dept. of Computer Science and Engineering</h5>
-                        <h3 style="font-size: 2vw;"> Prasad V. Potluri Siddhartha Institute of Technology (Autonomous)</h3>
-                        <p>(Permanent Affiliation to JNTU, Kakinada) (Recognized by AICTE, Accredited by 
-                        NBA ,  NAAC) and
-                        (ISO 9001: 2008 Certified Institution)
-                        Kanuru, Vijayawada – 520007
-                        </p>
-                </div>
-                <div class="col-lg-6 col-md-12">
-                        <div >
-                                <img src="{{url_for('static', filename='images/1.webp')}}" style="padding-bottom: 56% ;width: 100%;">
-                        </div>
-                </div>
+<div class="container-fluid my-4" >
+
+    <div class="row">
+
+        <div class="col-lg-6 col-md-12">
+            <div style="width: 100%; padding-top: 56%; background-size: cover; background-repeat: no-repeat; background-image: url({{url_for('static', filename='images/1.webp')}});">
+            </div>
         </div>
+
+        <div class="col-lg-6 col-md-12">
+            <h4 style="text-align: center;">{{row1['EVENT_NAME'] | safe}}
+            <p style="text-align: center;">{{row1['START_DATE']}} to {{row1['END_DATE']}}</p></h4><br>
+            <h4>{{row2['SPEAKER'] | safe}}</h4>
+            <p>{{row2['ABOUT_SPEAKER'] | safe}}</p>
+            <p>{{row2['ORGANIZED_BY'] | safe}}</p><br>
+            <p>{{row2['ABOUT_EVENT'] | safe}}</p>
+        </div>
+    </div>
+
 </div>
 {% endblock %}
