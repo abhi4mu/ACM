@@ -7,9 +7,9 @@ app = Flask(__name__)
 
 #connecting to database
 app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_DB'] = 'pvpsiddh_acm'
-app.config['MYSQL_USER'] = 'pvpsiddh_webmaster'
-app.config['MYSQL_PASSWORD'] = 'web123master'
+app.config['MYSQL_DB'] = 'ACM'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = 'root'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 mysql = MySQL(app)
 
@@ -24,9 +24,9 @@ def careerNews():
 def event(id):
 
     cur = mysql.connection.cursor()
-    cur.execute("SELECT * FROM EVENT_NAMES EVENT_ID={}".format(id))
+    cur.execute("SELECT * FROM EVENT_NAMES WHERE EVENT_ID={}".format(id))
     row1 = cur.fetchall()
-    cur.execute("SELECT * FROM EVENT_DESC EVENT_ID={}".format(id))
+    cur.execute("SELECT * FROM EVENT_DESC WHERE EVENT_ID={}".format(id))
     row2 = cur.fetchall()
     cur.close()
     return render_template('event.html',row1=row1[0],row2=row2[0])
