@@ -1,3 +1,5 @@
+use ACM;
+
 insert into TECH_NEWS values
 ("Google, Hospital Chain Partner in Push to Boost Efficiency<br>The Hill<br>Lexi Lonas<br>May 26,2021","https://thehill.com/policy/healthcare/555499-google-hospital-chain-partner-in-push-to-boost-efficiency-medical-care"),
 

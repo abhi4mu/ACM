@@ -56,7 +56,18 @@ def events():
 
 @app.route('/home')
 def home():
-    return render_template('home.html')
+
+    cur = mysql.connection.cursor()
+    
+    cur.execute('SELECT * FROM CAREER_NEWS')
+    careerNews = cur.fetchall()
+
+    cur.execute('SELECT * FROM TECH_NEWS')
+    techNews = cur.fetchall()
+
+    cur.close()
+
+    return render_template('home.html',careerNews=careerNews,techNews=techNews)
 
 @app.route('/login')
 def login():
