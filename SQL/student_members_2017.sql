@@ -31,11 +31,11 @@ INSERT INTO STUDENT_MEMBERS VALUES
 (36, " ","Rajesh Pedamutti"," ",'M',"rajeshpedamutti@yahoo.com"," "),
 (37, " ","Mukkamula Avinash"," ",'M',"avinashmukkamula@yahoo.com"," "),
 (38, " ","P.Krishna Prasanna"," ",'F',"krishna_cse55@yahoo.com"," "),
-(40, " ","T.V.Krishna Chowdary"," ",'M',"tkrishna09@gmail.com"," "),
-(41, " ","Kodeti Shalini"," ",'F',"shalinikondeti6@gmail.com"," "),
-(42, " ","B.Venkateshwara Rao"," ",'M',"bvenkat70@gmail.com"," "),
-(43, " ","A.Bhaskara Srinivas"," ",'M',"srinivasampolu@gmail.com"," "),
-(44, " ","D.Krishna"," ",'M',"Krishna.davuluri@gmail.com"," ");
+(39, " ","T.V.Krishna Chowdary"," ",'M',"tkrishna09@gmail.com"," "),
+(40, " ","Kodeti Shalini"," ",'F',"shalinikondeti6@gmail.com"," "),
+(41, " ","B.Venkateshwara Rao"," ",'M',"bvenkat70@gmail.com"," "),
+(42, " ","A.Bhaskara Srinivas"," ",'M',"srinivasampolu@gmail.com"," "),
+(43, " ","D.Krishna"," ",'M',"Krishna.davuluri@gmail.com"," ");
 
 
 -- SELECT * FROM EVENT_NAMES ORDER BY START_DATE DESC;
