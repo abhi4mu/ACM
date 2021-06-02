@@ -12,10 +12,10 @@
             {% for student in students %}
             <div class="col-lg-2 col-md-4">
                 <div class="member_card">
-                    {% if student['IMAGE']=='' or student['Image']==' ' %} <!-- if image is empty -->
+                    {% if student['IMAGE_AVAILABLE']==0 %} <!-- if image is empty -->
                     <div class="member_card_img_top" style="background-image: url({{url_for('static', filename='images/members/students/{}.webp'.format(student['GENDER']))}});"></div>
                     {% else %}
-                    <div class="member_card_img_top" style="background-image: url({{url_for('static', filename='images/members/students/{}.webp'.format(student['IMAGE']))}});"></div>
+                    <div class="member_card_img_top" style="background-image: url({{url_for('static', filename='images/members/students/{}.webp'.format(student['SNO']))}});"></div>
                     {% endif %}
                     <div class="members_card_body">
                         <p class="member_card_text"> 
