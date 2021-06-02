@@ -1,97 +1,38 @@
 {% extends "layout.html" %}
 {% block body %}
 
-  <!-- sponser -->
-  <div style="width:100%;">
+    <!-- sponser -->
     <br>
     <h1 class="member_head">Sponsers</h1>
-    
-    <div class="member_card col-lg-2 col-md-6">
-      <div class="member_card_img_top" style="background-image: url('/static/images/selfie1.jpeg');"></div>
-      <div class="members_card_body">
-        <p class="member_card_text">Prof. M. V. RamaKrishna <br> CSE </p>
-      </div>
+
+    <!-- Student Members -->
+    <h1 class="member_head">Student Members</h1>  
+    <div class="container-fluid">
+        <div class="row">
+            {% for student in students %}
+            <div class="col-lg-2 col-md-4">
+                <div class="member_card">
+                    {% if student['IMAGE']=='' or student['Image']==' ' %} <!-- if image is empty -->
+                    <div class="member_card_img_top" style="background-image: url({{url_for('static', filename='images/members/students/{}.webp'.format(student['GENDER']))}});"></div>
+                    {% else %}
+                    <div class="member_card_img_top" style="background-image: url({{url_for('static', filename='images/members/students/{}.webp'.format(student['IMAGE']))}});"></div>
+                    {% endif %}
+                    <div class="members_card_body">
+                        <p class="member_card_text"> 
+                            <b> {{student['TITLE']}} </b><br>
+                            {{student['STUDENT_NAME']}}, {{student['ROLL_NUM']}} <br>
+                            {{student['EMAIL']}} </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
     </div>
 
-  </div>
-
-  <!-- Student Members -->
-  <div style="width:100%;">
-    <br>
-    <h1 class="member_head">Student Members</h1>
-    
-    <div class="member_card col-lg-2 col-md-6">
-      <div class="member_card_img_top" style="background-image: url({{url_for('static', filename='images/members/1.jpeg')}});"></div>
-      <div class="members_card_body">
-        <p class="member_card_text">Sai Siddhartha Parvathaneni <br> 18501A0591 <br> Chair CSE</p>
-      </div>
-    </div>
-
-    <div class="member_card col-lg-2 col-md-6">
-      <div class="member_card_img_top" style="background-image: url({{url_for('static', filename='images/members/2.jpeg')}});"></div>
-      <div class="members_card_body">
-        <p class="member_card_text">Sai Siddhartha Parvathaneni <br> 18501A0591 <br> Chair CSE</p>
-      </div>
-    </div>
-
-    <div class="member_card col-lg-2 col-md-6">
-      <div class="member_card_img_top" style="background-image: url({{url_for('static', filename='images/members/3.jpeg')}});"></div>
-      <div class="members_card_body">
-        <p class="member_card_text">Sai Siddhartha Parvathaneni <br> 18501A0591 <br> Chair CSE</p>
-      </div>
-    </div>
-
-    <div class="member_card col-lg-2 col-md-6">
-      <div class="member_card_img_top" style="background-image: url({{url_for('static', filename='images/members/4.jpeg')}});"></div>
-      <div class="members_card_body">
-        <p class="member_card_text">Sai Siddhartha Parvathaneni <br> 18501A0591 <br> Chair CSE</p>
-      </div>
-    </div>
-
-    <div class="member_card col-lg-2 col-md-6">
-      <div class="member_card_img_top" style="background-image: url({{url_for('static', filename='images/members/5.jpeg')}});"></div>
-      <div class="members_card_body">
-        <p class="member_card_text">Sai Siddhartha Parvathaneni <br> 18501A0591 <br> Chair CSE</p>
-      </div>
-    </div>
-
-    <div class="member_card col-lg-2 col-md-6">
-      <div class="member_card_img_top" style="background-image: url('/static/images/selfie3.jpeg');"></div>
-      <div class="members_card_body">
-        <p class="member_card_text">Sai Siddhartha Parvathaneni <br> 18501A0591 <br> Chair CSE</p>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- faculty members -->
-  <div style="width:100%;">
+    <!-- faculty members -->
     <br>
     <h1 class="member_head">Faculty Members</h1>
     
-    <div class="member_card col-lg-2 col-md-6">
-      <div class="member_card_img_top" style="background-image: url('/static/images/selfie1.jpeg');"></div>
-      <div class="members_card_body">
-        <p class="member_card_text">Sai Siddhartha Parvathaneni <br> 18501A0591 <br> Chair CSE</p>
-      </div>
-    </div>
-
-    <div class="member_card col-lg-2 col-md-6">
-      <div class="member_card_img_top" style="background-image: url('/static/images/selfie2.jpeg');"></div>
-      <div class="members_card_body">
-        <p class="member_card_text">Sai Siddhartha Parvathaneni <br> 18501A0591 <br> Chair CSE</p>
-      </div>
-    </div>
-
-    <div class="member_card col-lg-2 col-md-6">
-      <div class="member_card_img_top" style="background-image: url('/static/images/selfie3.jpeg');"></div>
-      <div class="members_card_body">
-        <p class="member_card_text">Sai Siddhartha Parvathaneni <br> 18501A0591 <br> Chair CSE</p>
-      </div>
-    </div>
-    
-    </div>
-  </div>
 
   
 {% endblock %}

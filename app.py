@@ -15,6 +15,7 @@ mysql = MySQL(app)
 
 
 card_colors = ['#abad59','#6f8faf','#9693b2','#deb887','#a14633','#862657','#5b6466','#685a4e','#009440','#fc8eac','#ffa500','#4b0082','#009691']
+titles = {1:'Chair',2:'Vice-Chair',3:'Secretary',4:'Treasurer',5:'Web Master',6:'Membership Chair',7:'Student Member'}
 
 @app.route('/careerNews')
 def careerNews():
@@ -76,7 +77,17 @@ def login():
 @app.route('/members')
 def members():
 
-    return render_template('members.html')
+    cur = mysql.connection.cursor()
+
+    cur.execute('SELECT * FROM STUDENT_MEMBERS JOIN STUDENT_YEARS WHERE STUDENT_SNO=SNO AND START_YEAR="2020" AND END_YEAR="2021" ORDER BY TITLE;')
+    students = cur.fetchall()
+
+    cur.close()
+
+    for student in students:
+        student['TITLE'] = titles[int(student['TITLE'])]#changing numbers to names for titles
+
+    return render_template('members.html',students=students)
 
 
 @app.route('/techNews')

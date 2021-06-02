@@ -103,15 +103,13 @@
 .member_card{
 	display: inline-block;
 	background: rgba(255,255,255,0);
-    margin-top:30px;
-    margin-bottom:50px;
-    margin-left: 4%;
-    margin-right: 4%;
-    cursor: pointer;
+  width: 90%;
+  margin-left: 5%;
+  margin-top:30px;
+  margin-bottom:50px;
 }
 .member_card_body {
     flex: 1 1 auto;
-    padding: 1.25rem;
 }
 
 .member_card_img_top {
@@ -124,7 +122,6 @@
 
 .member_card_text {
     text-align: center;
-    font-size: 2vmin;
     color: black;
 }
 
