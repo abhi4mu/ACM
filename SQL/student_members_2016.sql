@@ -1,3 +1,5 @@
+USE ACM;
+
 INSERT INTO STUDENT_MEMBERS VALUES 
 (76, " ","K. Navya Sree",0,'F',"navyakadiyala1234@gmail.com"," "),
 (77, " ","Ch.Jwalitha",0,'F',"jwalitha.challagulla@gmail.com"," "),

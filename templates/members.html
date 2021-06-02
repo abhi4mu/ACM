@@ -12,6 +12,7 @@
             {% for student in students %}
             <div class="col-lg-2 col-md-4">
                 <div class="member_card">
+                    <p class="member_card_text"><b> {{student['TITLE']}} </b></p>
                     {% if student['IMAGE_AVAILABLE']==0 %} <!-- if image is empty -->
                     <div class="member_card_img_top" style="background-image: url({{url_for('static', filename='images/members/students/{}.webp'.format(student['GENDER']))}});"></div>
                     {% else %}
@@ -19,7 +20,6 @@
                     {% endif %}
                     <div class="members_card_body">
                         <p class="member_card_text"> 
-                            <b> {{student['TITLE']}} </b><br>
                             {{student['STUDENT_NAME']}}, {{student['ROLL_NUM']}} <br>
                             {{student['EMAIL']}} </p>
                     </div>
