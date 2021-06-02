@@ -73,8 +73,9 @@ def home():
 def login():
     return render_template('login.html')
 
-@app.route('/members', methods=['GET','POST'])
+@app.route('/members')
 def members():
+
     return render_template('members.html')
 
 
