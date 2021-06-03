@@ -10,5 +10,5 @@ INSERT INTO STUDENT_MEMBERS VALUES
 (7, "18501A05B6","Venkata Naga Sai Gowthami Cheruvu",1,'F',"cheruvugowthami@gmail.com",""),
 (8, "18501A0570","Kavitha Mandala",1,'F',"mkavithamandala@gmail.com","8"),
 (9, "18501A05B8","Priyanka Vuyyuru",1,'F',"vuyyurupriyanka27@gmail.com",""),
-(10,"18501A0568","Spandana Mallempati",0,'F',"spandana.mallempati@gmail.com",""),
+(10,"18501A0568","Spandana Mallempati",1,'F',"spandana.mallempati@gmail.com",""),
 (11, "18501A0506","Tonika Devi Avanigadda",1,'F',"tonikadevi@gmail.com","11");
