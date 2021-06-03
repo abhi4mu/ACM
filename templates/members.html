@@ -10,7 +10,7 @@
     <div class="container-fluid">
         <div class="row">
             {% for student in students %}
-            <div class="col-lg-2 col-md-4">
+            <div class="col-lg-2 col-md-6">
                 <div class="member_card">
                     <p class="member_card_text"><b> {{student['TITLE']}} </b></p>
                     {% if student['IMAGE_AVAILABLE']==0 %} <!-- if image is empty -->

@@ -1,7 +1,9 @@
 {% extends 'layout.html' %}
 
 {% block body %}
-    <form action="get">
-        <input type="text" name="query" placeholder="Search for Roll or Name or Year or Batch(both start year and end year)">
+    <form method="GET" action={{url_for('alumni')}}>
+        <input type="text" name="query" placeholder="Roll or Name or Year or Start&End years" style="width: 50%;">
+        <button type="submit" value="submit">Search</button>
     </form>
+    {{query}}
 {% endblock %}

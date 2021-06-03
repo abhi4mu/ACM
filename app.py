@@ -1,4 +1,4 @@
-from flask import Flask,render_template,url_for
+from flask import Flask,render_template,url_for,request
 import flask
 from flask_mysqldb import MySQL
 import random
@@ -17,9 +17,15 @@ mysql = MySQL(app)
 card_colors = ['#abad59','#6f8faf','#9693b2','#deb887','#a14633','#862657','#5b6466','#685a4e','#009440','#fc8eac','#ffa500','#4b0082','#009691']
 titles = {1:'Chair',2:'Vice-Chair',3:'Secretary',4:'Treasurer',5:'Web Master',6:'Membership Chair',7:'Student Member'}
 
-@app.route('/careerNews')
-def careerNews():
-    return render_template('careerNews.html')
+
+@app.route('/alumni',methods=['POST','GET'])
+def alumni():
+
+    if request.method == 'GET':
+        query = request.args.get('query','')
+        return render_template('alumni.html',query=query)
+    return render_template('alumni.html')
+
 
 @app.route('/event/<id>')
 def event(id):
@@ -31,6 +37,7 @@ def event(id):
     row2 = cur.fetchall()
     cur.close()
     return render_template('event.html',row1=row1[0],row2=row2[0])
+
 
 @app.route('/events')
 def events():
@@ -70,9 +77,11 @@ def home():
 
     return render_template('home.html',careerNews=careerNews,techNews=techNews)
 
+
 @app.route('/login')
 def login():
     return render_template('login.html')
+
 
 @app.route('/members')
 def members():
@@ -89,10 +98,6 @@ def members():
 
     return render_template('members.html',students=students)
 
-
-@app.route('/techNews')
-def techNews():
-    return render_template('techNews.html')
 
 if __name__=='__main__':
     app.run(debug=True)
