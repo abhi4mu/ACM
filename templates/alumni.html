@@ -1,10 +1,12 @@
 {% extends 'layout.html' %}
 
 {% block body %}
-    <form method="GET" action={{url_for('alumni')}}>
-        <input type="text" name="query" placeholder="Roll or Name or Year or Start&End years" style="width: 50%;">
-        <button type="submit" value="submit">Search</button>
-    </form>
+    <div class="row" style="background-color: aquamarine;">
+        <div class="col-lg-4"></div>
+        <form class="d-flex col-md-12 col-lg-4 my-5">
+            <input class="form-control me-5 py-2" type="search" placeholder="Search Roll or Name or Year or Start-End years" aria-label="Search" name="query">
+        </form>
+    </div>
 
     <div class="container-fluid">
         <div class="row">

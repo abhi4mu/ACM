@@ -2,7 +2,7 @@ USE ACM;
 
 INSERT INTO STUDENT_MEMBERS VALUES 
 (1, "18501A0591","Sai Siddhartha Parvathaneni",1,'M',"sai.siddhartha.parvathaneni@gmail.com",""),
-(2, "18501A0593","Siva Venkata Sai Rohith Penugonda",0,'M',"princerohith132000@gmail.com",""),
+(2, "18501A0593","Siva Venkata Sai Rohith Penugonda",1,'M',"princerohith132000@gmail.com",""),
 (3, "18501A0518","Meghana Burra",0,'F',"burrameghana@gmail.com",""),
 (4, "18501A0575","Bindu Vardhani Marrapu",1,'F',"bindu.marrapu@gmail.com",""),
 (5, "18501A0581","Abhinav Munagala",1,'M',"abhinavmunagala4@gmail.com","5"),

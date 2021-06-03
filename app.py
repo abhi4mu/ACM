@@ -24,6 +24,8 @@ def alumni():
     if request.method == 'GET':
         students = []
         query = request.args.get('query','')
+        if query=='':
+            return render_template('alumni.html')
         
         class MembersFind:
     
