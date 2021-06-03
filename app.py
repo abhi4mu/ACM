@@ -15,16 +15,65 @@ mysql = MySQL(app)
 
 
 card_colors = ['#abad59','#6f8faf','#9693b2','#deb887','#a14633','#862657','#5b6466','#685a4e','#009440','#fc8eac','#ffa500','#4b0082','#009691']
-titles = {1:'Chair',2:'Vice-Chair',3:'Secretary',4:'Treasurer',5:'Web Master',6:'Membership Chair',7:'Student Member'}
+titles = {1:'Chair',2:'Vice Chair',3:'Secretary',4:'Treasurer',5:'Web Master',6:'Membership Chair',7:'Student Member'}
 
 
 @app.route('/alumni',methods=['POST','GET'])
 def alumni():
 
     if request.method == 'GET':
+        students = []
         query = request.args.get('query','')
-        return render_template('alumni.html',query=query)
-    return render_template('alumni.html')
+        
+        class MembersFind:
+    
+            def getByName(self,name):
+                cur = mysql.connection.cursor()
+                cur.execute('SELECT * FROM STUDENT_MEMBERS JOIN STUDENT_YEARS USING (SNO) WHERE LOWER(STUDENT_NAME) LIKE "%{}%" ORDER BY START_YEAR DESC;'.format(name.lower()))
+                students = cur.fetchall()
+                cur.close()
+                return students
+
+            def getByTitle(self,title):
+                rev_titles = {'chair':1,'vice chair':2,'secretary':3,'treasurer':4,'web master':5,'membership':6,'student member':7,'web':5,'vice':2}
+                title = rev_titles[title] #converting title from word to its corresponding number
+                cur = mysql.connection.cursor()
+                cur.execute('SELECT * FROM STUDENT_MEMBERS JOIN STUDENT_YEARS USING (SNO) WHERE TITLE={} ORDER BY START_YEAR DESC;'.format(title))
+                students = cur.fetchall()
+                cur.close()
+                return students
+
+            def getByYear(self,startYear,endYear):
+                cur = mysql.connection.cursor()
+                cur.execute('SELECT * FROM STUDENT_MEMBERS JOIN STUDENT_YEARS USING (SNO) WHERE START_YEAR="{}" AND END_YEAR="{}" ORDER BY TITLE;'.format(startYear,endYear))
+                students = cur.fetchall()
+                cur.close()
+                return students
+
+        find = MembersFind()
+
+        if query.isalpha():
+            query = query.lower()
+
+            if query in ['chair','vice chair','secretary','treasurer','web master','membership','member','web','vice']:
+                students = find.getByTitle(query)
+            else:
+                students = find.getByName(query)   
+        elif query[0]=='1':
+            students = find.getByRoll(query)
+        else:
+            query = query.split('-')
+            if len(query) == 1:
+                query.append(str(int(query[0])+1))
+                query2 = [str(int(query[0])-1),query[0]]
+                students = find.getByYear(query[0],query[1])
+                students += find.getByYear(query2[0],query2[1])
+            else:
+                students = find.getByYear(query[0],query[1])
+            
+        for student in students:
+            student['TITLE'] = titles[int(student['TITLE'])]#changing numbers to names for titles
+        return render_template('alumni.html',students=students)
 
 
 @app.route('/event/<id>')
@@ -101,3 +150,5 @@ def members():
 
 if __name__=='__main__':
     app.run(debug=True)
+
+

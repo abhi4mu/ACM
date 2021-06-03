@@ -5,5 +5,28 @@
         <input type="text" name="query" placeholder="Roll or Name or Year or Start&End years" style="width: 50%;">
         <button type="submit" value="submit">Search</button>
     </form>
-    {{query}}
+
+    <div class="container-fluid">
+        <div class="row">
+            {% for student in students %}
+            <div class="col-lg-2 col-md-6">
+                <div class="member_card">
+                    <p class="member_card_text"><b> {{student['TITLE']}}&ensp;&ensp;</b>{{student['START_YEAR']+' - '+student['END_YEAR']}}</p>
+                    {% if student['IMAGE_AVAILABLE']==0 %} <!-- if image is empty -->
+                    <div class="member_card_img_top" style="background-image: url({{url_for('static', filename='images/members/students/{}.webp'.format(student['GENDER']))}});"></div>
+                    {% else %}
+                    <div class="member_card_img_top" style="background-image: url({{url_for('static', filename='images/members/students/{}.webp'.format(student['SNO']))}});"></div>
+                    {% endif %}
+                    <div class="members_card_body">
+                        <p class="member_card_text"> 
+                            {{student['STUDENT_NAME']}} <br>
+                            {{student['ROLL_NUM']}} <br>
+                            {{student['EMAIL']}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
 {% endblock %}
