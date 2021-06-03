@@ -88,7 +88,7 @@ def members():
 
     cur = mysql.connection.cursor()
 
-    cur.execute('SELECT * FROM STUDENT_MEMBERS JOIN STUDENT_YEARS WHERE STUDENT_SNO=SNO AND START_YEAR="2020" AND END_YEAR="2021" ORDER BY TITLE;')
+    cur.execute('SELECT * FROM STUDENT_MEMBERS JOIN STUDENT_YEARS USING (SNO) WHERE START_YEAR="2020" AND END_YEAR="2021" ORDER BY TITLE;')
     students = cur.fetchall()
 
     cur.close()
