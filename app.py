@@ -1,5 +1,4 @@
 from flask import Flask,render_template,url_for,request
-import flask
 from flask_mysqldb import MySQL
 import random
 
@@ -30,25 +29,50 @@ def alumni():
         class MembersFind:
     
             def getByName(self,name):
+
                 cur = mysql.connection.cursor()
-                cur.execute('SELECT * FROM STUDENT_MEMBERS JOIN STUDENT_YEARS USING (SNO) WHERE LOWER(STUDENT_NAME) LIKE "%{}%" ORDER BY START_YEAR DESC;'.format(name.lower()))
+
+                sql_query = 'SELECT * FROM STUDENT_MEMBERS JOIN STUDENT_YEARS USING (SNO) WHERE LOWER(STUDENT_NAME) LIKE "%{}%" ORDER BY START_YEAR DESC;'.format(name.lower())
+                cur.execute(sql_query)
                 students = cur.fetchall()
+
                 cur.close()
                 return students
+
 
             def getByTitle(self,title):
+
                 rev_titles = {'chair':1,'vice chair':2,'secretary':3,'treasurer':4,'web master':5,'membership':6,'student member':7,'web':5,'vice':2}
                 title = rev_titles[title] #converting title from word to its corresponding number
+
                 cur = mysql.connection.cursor()
-                cur.execute('SELECT * FROM STUDENT_MEMBERS JOIN STUDENT_YEARS USING (SNO) WHERE TITLE={} ORDER BY START_YEAR DESC;'.format(title))
+
+                sql_query = 'SELECT * FROM STUDENT_MEMBERS JOIN STUDENT_YEARS USING (SNO) WHERE TITLE={} ORDER BY START_YEAR DESC;'.format(title)
+                cur.execute(sql_query)
                 students = cur.fetchall()
+
                 cur.close()
                 return students
 
+
             def getByYear(self,startYear,endYear):
+
                 cur = mysql.connection.cursor()
-                cur.execute('SELECT * FROM STUDENT_MEMBERS JOIN STUDENT_YEARS USING (SNO) WHERE START_YEAR="{}" AND END_YEAR="{}" ORDER BY TITLE;'.format(startYear,endYear))
+
+                sql_query = 'SELECT * FROM STUDENT_MEMBERS JOIN STUDENT_YEARS USING (SNO) WHERE START_YEAR="{}" AND END_YEAR="{}" ORDER BY TITLE;'.format(startYear,endYear)
+                cur.execute(sql_query)
                 students = cur.fetchall()
+
+                cur.close()
+                return students
+
+            def getByRoll(self,roll):
+                cur = mysql.connection.cursor()
+
+                sql_query = 'SELECT * FROM STUDENT_MEMBERS JOIN STUDENT_YEARS  USING (SNO)  WHERE ROLL_NUM="{}"'.format(roll)
+                cur.execute(sql_query)
+                students = cur.fetchall()
+
                 cur.close()
                 return students
 
@@ -60,9 +84,11 @@ def alumni():
             if query in ['chair','vice chair','secretary','treasurer','web master','membership','member','web','vice']:
                 students = find.getByTitle(query)
             else:
-                students = find.getByName(query)   
+                students = find.getByName(query)  
+
         elif query[0]=='1':
             students = find.getByRoll(query)
+
         else:
             query = query.split('-')
             if len(query) == 1:
@@ -70,11 +96,13 @@ def alumni():
                 query2 = [str(int(query[0])-1),query[0]]
                 students = find.getByYear(query[0],query[1])
                 students += find.getByYear(query2[0],query2[1])
+
             else:
                 students = find.getByYear(query[0],query[1])
             
         for student in students:
             student['TITLE'] = titles[int(student['TITLE'])]#changing numbers to names for titles
+
         return render_template('alumni.html',students=students)
 
 
