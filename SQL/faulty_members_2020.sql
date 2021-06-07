@@ -1,4 +1,5 @@
 /* 2020 BATCH*/
+USE ACM;
 
 INSERT INTO FACULTY_MEMBERS VALUES
 (1," ","Jayalakshmi Aravapalli,",0,'F',"jayalakshmivallabhaneni@gmail.com"),
