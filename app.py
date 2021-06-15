@@ -86,7 +86,7 @@ def alumni():
             else:
                 students = find.getByName(query)  
 
-        elif query[0]=='1':
+        elif 'A' in query:
             students = find.getByRoll(query)
 
         else:
