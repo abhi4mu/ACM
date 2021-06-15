@@ -2,7 +2,7 @@
 USE ACM;
 
 INSERT INTO FACULTY_MEMBERS VALUES
-(1," ","Jayalakshmi Aravapalli,",0,'F',"jayalakshmivallabhaneni@gmail.com"),
+(1," ","Jayalakshmi Aravapalli",0,'F',"jayalakshmivallabhaneni@gmail.com"),
 (2," ","M V Ramakrishna",0,'M',"drmvrk@gmail.com"),
 (3," ","Ramadevi Jujjuri",0,'F',"k.ramakarthik@gmail.com"),
 (4," ","sri Lakshmi Talasila",0,'F',"tslakshmi@pvpsiddhartha.ac.in"),

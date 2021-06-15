@@ -169,13 +169,15 @@ def members():
 
     cur.execute('SELECT * FROM STUDENT_MEMBERS JOIN STUDENT_YEARS USING (SNO) WHERE START_YEAR="2020" AND END_YEAR="2021" ORDER BY TITLE;')
     students = cur.fetchall()
+    cur.execute('SELECT * FROM FACULTY_MEMBERS;')
+    faculty = cur.fetchall()
 
     cur.close()
 
     for student in students:
         student['TITLE'] = titles[int(student['TITLE'])]#changing numbers to names for titles
 
-    return render_template('members.html',students=students)
+    return render_template('members.html',students=students,faculty = faculty)
 
 
 if __name__=='__main__':
