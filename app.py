@@ -16,6 +16,9 @@ mysql = MySQL(app)
 card_colors = ['#abad59','#6f8faf','#9693b2','#deb887','#a14633','#862657','#5b6466','#685a4e','#009440','#fc8eac','#ffa500','#4b0082','#009691']
 titles = {1:'Chair',2:'Vice Chair',3:'Secretary',4:'Treasurer',5:'Web Master',6:'Membership Chair',7:'Student Member'}
 
+@app.route('/aboutUs')
+def aboutUs():
+    return render_template('aboutUs.html')
 
 @app.route('/alumni',methods=['POST','GET'])
 def alumni():
