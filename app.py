@@ -144,7 +144,7 @@ def events():
     return render_template('events.html',rows=rows)
 
 
-@app.route('/home')
+@app.route('/')
 def home():
 
     cur = mysql.connection.cursor()
