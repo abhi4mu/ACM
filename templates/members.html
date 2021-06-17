@@ -4,7 +4,7 @@
     <!-- sponser -->
     <br>
     <h1 class="member_head">Sponsers</h1>
-    <div class="col-lg-2 col-md-6">
+    <div class="col-lg-3 col-md-6">
         <div class="members_card_body">
             <div class="member_card">
                 <div class="member_card_img_top" style="background-image: url({{url_for('static', filename='images/members/faculty/M.webp')}});"></div>
@@ -21,9 +21,9 @@
     <div class="container-fluid">
         <div class="row">
             {% for student in students %}
-            <div class="col-lg-2 col-md-6">
+            <div class="col-lg-3 col-md-6">
                 <div class="member_card">
-                    <p class="member_card_text"><b> {{student['TITLE']}} </b></p>
+                    <h5 class="member_card_text"><b> {{student['TITLE']}} </b></h5>
                     {% if student['IMAGE_AVAILABLE']==0 %} <!-- if image is empty -->
                     <div class="member_card_img_top" style="background-image: url({{url_for('static', filename='images/members/students/{}.webp'.format(student['GENDER']))}});"></div>
                     {% else %}
@@ -47,7 +47,7 @@
     <div class="container-fluid">
         <div class="row">
             {% for teacher in faculty %}
-            <div class="col-lg-2 col-md-6">
+            <div class="col-lg-3 col-md-6">
                 <div class="member_card">
                     {% if teacher['IMAGE_AVAILABLE']==0 %} <!-- if image is empty -->
                     <div class="member_card_img_top" style="background-image: url({{url_for('static', filename='images/members/faculty/{}.webp'.format(teacher['GENDER']))}});"></div>
